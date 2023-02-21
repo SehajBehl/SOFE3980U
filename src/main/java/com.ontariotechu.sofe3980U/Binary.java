@@ -1,5 +1,4 @@
-package com.ontariotechu.sofe3980U;
-
+package main.java.com.ontariotechu.sofe3980U;
 /**
  * Unsigned integer Binary variable
  *
