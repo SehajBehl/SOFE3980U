@@ -179,16 +179,17 @@ public class Binary
   	{
     	// the index of the second digit 
     	int ind2=num2.number.length()-1;
-    	Binary num3=new Binary("0");
+	Binary tnum = new Binary(num1.number);
+    	Binary num3 = new Binary("0");
     	while(ind2>=0) // loop the second number 
     	{
       		// if is 0, do nothing, but if it is 1, sum num1 to num3
       		if (num2.number.charAt(ind2) == '1') {
-        	num3 = Binary.add(num1, num3);
+        	num3 = Binary.add(tnum, num3);
       		}
       		ind2--;
       		// add 0 to num1
-      		num1.number = num1.number + "0";
+      		tnum.number = tnum.number + "0";
     	}
     	return num3;
   	}
