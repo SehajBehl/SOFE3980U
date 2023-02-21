@@ -1,4 +1,4 @@
-package main.test.java.com.ontariotechu.net.sofe3980U;
+package com.ontariotechu.sofe3980U;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,5 +47,21 @@ public class BinaryAPIControllerTest {
 			.andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(1010))
 			.andExpect(MockMvcResultMatchers.jsonPath("$.result").value(10001))
 			.andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("add"));
+    }
+
+    @Test
+    public void mult() throws Exception {
+        this.mvc.perform(get("/mult").param("operand1","1010").param("operand2","1001"))//.andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(content().string("1011010"));
+    }
+	@Test
+    public void mult2() throws Exception {
+        this.mvc.perform(get("/mult_json").param("operand1","10").param("operand2","1001"))//.andDo(print())
+            .andExpect(status().isOk())
+            .andExpect(MockMvcResultMatchers.jsonPath("$.operand1").value(10))
+			.andExpect(MockMvcResultMatchers.jsonPath("$.operand2").value(1001))
+			.andExpect(MockMvcResultMatchers.jsonPath("$.result").value(10010))
+			.andExpect(MockMvcResultMatchers.jsonPath("$.operator").value("mult"));
     }
 }
