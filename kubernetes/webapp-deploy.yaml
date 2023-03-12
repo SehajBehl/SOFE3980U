@@ -13,8 +13,8 @@ spec:
         app: binarycalculator
     spec:
       containers:
-        - image: bubbly-triumph-380321/binarycalculator
+        - image: gcr.io/bubbly-triumph-380321/binarycalculator
           name: binarycalculator
           ports:
             - containerPort: 8080
-              name: webapp
+              name: binarycalculator
