@@ -17,3 +17,14 @@ To run the test suite, execute the following command:
 It is also possible to run the tests and the application right after:  
 
 `$ mvn test spring-boot:run`
+
+### Deploy on Google Cloud using Kubernetes
+
+To deploy the application on GCP using Kubernetes, run the following commands:
+
+```
+$ git clone https://github.com/SehajBehl/SOFE3980U-Lab2
+$ mvn package
+$ kubectl create -f kubernetes/webapp-deploy.yml
+$ kubectl create -f kubernetes/webapp-service.yml
+```
